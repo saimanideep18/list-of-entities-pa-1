@@ -33,8 +33,20 @@ function App() {
       author: 'Michael Brown',
     },
   ];
-
-  return <>{/* write code to display all the books using */}</>;
+  return (
+    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px' }}>
+      {books.map((book) => (
+        <div key={book.id} className="book-card" style={{ display: 'flex', alignItems: 'center' }}>
+          <img src={book.image} alt={book.name} />
+          <div>
+            <h2>{book.name}</h2>
+            <p><strong>Genre:</strong> {book.genre}</p>
+            <p><strong>Author:</strong> {book.author}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default App;
